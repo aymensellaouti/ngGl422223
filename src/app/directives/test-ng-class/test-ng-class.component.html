@@ -1,0 +1,12 @@
+<div *ngIf="isEteinte" [ngClass]="{
+    'eteinte': isEteinte,
+    'allume': !isEteinte
+  }">Lampe</div>
+<button class="btn btn-primary" (click)="interupteur()">interupteur</button>
+<p appHighlight>Bonjour</p>
+<p appHighlight [in]="'white'" [out]="'red'">Bonjour</p>
+<p appHighlight [in]="'white'" [out]="'red'">Bonjour</p>
+<p appHighlight [in]="'white'" [out]="'blue'">Bonjour</p>
+<p appHighlight [in]="'white'" [out]="'green'">Bonjour</p>
+<p appHighlight [in]="'black'" [out]="'yellow'">Bonjour</p>
+<p appHighlight [in]="'green'" [out]="'yellow'">Bonjour</p>

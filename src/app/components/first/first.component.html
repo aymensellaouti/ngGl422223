@@ -1,0 +1,9 @@
+<p [hidden]="isHidden">first works!</p>
+<p>test</p>
+<button (click)="showHide()" class="btn btn-primary">
+  {{buttonTitle}}
+</button>
+<input #inputMessage (keyup)="changeInputMessage(inputMessage.value)" type="text">
+
+Le contenu de l'input est : {{ inputContent }}
+<app-second></app-second>
