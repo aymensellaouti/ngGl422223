@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import memo from 'memo-decorator';
 @Pipe({
   name: 'fibo',
+  pure: true
 })
 export class FiboPipe implements PipeTransform {
   @memo()
