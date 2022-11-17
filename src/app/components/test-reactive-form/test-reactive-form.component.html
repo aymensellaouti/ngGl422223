@@ -1,0 +1,11 @@
+<p>test-reactive-form works!</p>
+
+<form [formGroup]="fg1">
+
+  name: <input formControlName="name" type="text">
+
+  <div *ngIf=" fg1.get('name')?.invalid && fg1.get('name')?.dirty " class="alert alert-danger">
+    Name incorrect
+  </div>
+
+</form>

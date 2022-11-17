@@ -1,0 +1,22 @@
+<p>test-template-form works!</p>
+
+<pre [appBg]="'lightblue'">
+  {{myForm | json}}
+</pre>
+
+<form #formulaire="ngForm" [ngFormOptions]="{
+  updateOn:'blur' }">
+  name: <input [(ngModel)]="myForm.name" #nameInput="ngModel" required name="name" type="text" class="form-control">
+  <div *ngIf="nameInput.invalid && nameInput.touched" class="alert alert-danger">
+    Le champ name est obligatoire
+  </div>
+  age: <input [(ngModel)]="myForm.age" [ngModelOptions]="{updateOn: 'change', name: 'age'}" required
+    pattern="[0-1]?\d{1,2}" #ageInput="ngModel" type="number" class="form-control">
+  <div *ngIf="ageInput.invalid && ageInput.touched" class="alert alert-danger">
+    Le champ age est obligatoire et on ne pense pas
+    que vous pouvez vivre plus de 200 ans :(
+  </div>
+  <button [disabled]="formulaire.invalid" (click)="processForm(formulaire)" class="btn btn-primary">
+    envoyer
+  </button>
+</form>

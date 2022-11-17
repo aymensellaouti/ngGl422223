@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,9 @@ import { Btc2usdPipe } from './pipes/btc2usd.pipe';
 import { FiboComponent } from './fibo/fibo.component';
 import { FiboPipe } from './pipes/fibo.pipe';
 import { LoggerService } from './services/logger-service';
+import { TestTemplateFormComponent } from './components/test-template-form/test-template-form.component';
+import { BgDirective } from './bg.directive';
+import { TestReactiveFormComponent } from './components/test-reactive-form/test-reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +34,11 @@ import { LoggerService } from './services/logger-service';
     Btc2usdPipe,
     FiboComponent,
     FiboPipe,
+    TestTemplateFormComponent,
+    BgDirective,
+    TestReactiveFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule ,FormsModule],
   providers: [LoggerService],
   bootstrap: [AppComponent],
 })
