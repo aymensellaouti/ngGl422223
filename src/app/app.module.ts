@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -19,6 +20,11 @@ import { LoggerService } from './services/logger-service';
 import { TestTemplateFormComponent } from './components/test-template-form/test-template-form.component';
 import { BgDirective } from './bg.directive';
 import { TestReactiveFormComponent } from './components/test-reactive-form/test-reactive-form.component';
+import { TestObservableComponent } from './components/test-observable/test-observable.component';
+import { CvComponent } from './cv/cv/cv.component';
+import { ListComponent } from './cv/list/list.component';
+import { ItemComponent } from './cv/item/item.component';
+import { DetailComponent } from './cv/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +43,19 @@ import { TestReactiveFormComponent } from './components/test-reactive-form/test-
     TestTemplateFormComponent,
     BgDirective,
     TestReactiveFormComponent,
+    TestObservableComponent,
+    CvComponent,
+    ListComponent,
+    ItemComponent,
+    DetailComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule ,FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
   providers: [LoggerService],
   bootstrap: [AppComponent],
 })
