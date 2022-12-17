@@ -25,6 +25,7 @@ import { CvComponent } from './cv/cv/cv.component';
 import { ListComponent } from './cv/list/list.component';
 import { ItemComponent } from './cv/item/item.component';
 import { DetailComponent } from './cv/detail/detail.component';
+import { TestHttpComponent } from './components/test-http/test-http.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { DetailComponent } from './cv/detail/detail.component';
     ListComponent,
     ItemComponent,
     DetailComponent,
+    TestHttpComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,11 @@ import { DetailComponent } from './cv/detail/detail.component';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [LoggerService],
+  providers: [ {
+      provide: LoggerService,
+      useClass: LoggerService
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

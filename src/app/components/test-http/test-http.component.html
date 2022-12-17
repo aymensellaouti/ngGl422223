@@ -1,0 +1,9 @@
+<p>Mes Todos : </p>
+<ol>
+    <li *ngFor="let todo of todos$ | async" [ngClass]="{
+            'green': todo.completed,
+            'red': !todo.completed
+         }">
+        {{todo.id}} | {{todo.title}} | {{todo.userId}}
+    </li>
+</ol>
