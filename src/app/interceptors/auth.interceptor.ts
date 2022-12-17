@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import {
   HttpRequest,
@@ -26,5 +27,7 @@ export class AuthInterceptor implements HttpInterceptor {
 }
 
 export const interceptorProvider = {
-  provide: HTTP_INTER
-}
+  provide: HTTP_INTERCEPTORS,
+  useClass: AuthInterceptor,
+  multi: true,
+};
